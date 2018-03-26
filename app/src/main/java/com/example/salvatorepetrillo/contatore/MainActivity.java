@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void visualizzaMessaggio ()
     {
-        vMessaggio.setText(getString(R.string.valore) " " + contatore);
+        vMessaggio.setText(getString(R.string.valore) + contatore);
     }
 
 }
