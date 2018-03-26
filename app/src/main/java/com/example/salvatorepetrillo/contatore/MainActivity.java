@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView vMessaggio;
     private Button vAumenta;
     private Button vDiminuisci;
+    private Button vAzzera;
+    private CheckBox vRaddoppio;
 
     private int contatore = 100;
 
@@ -25,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         vMessaggio = findViewById(R.id.txtMessaggio);
         vAumenta = findViewById(R.id.btnAumenta);
         vDiminuisci = findViewById(R.id.btnDiminuisci);
+        vAzzera = findViewById(R.id.btnAzzera);
+        vRaddoppio = findViewById(R.id.checkBox);
 
         //imposto azione pulsanti(buttom)
         vAumenta.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 ++contatore;
                 visualizzaMessaggio();
+                if(vRaddoppio.isChecked())
+                {
+                    ++contatore;
+                }
             }
         });
 
@@ -42,6 +51,15 @@ public class MainActivity extends AppCompatActivity {
                 visualizzaMessaggio();
             }
         });
+
+        vAzzera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                contatore = 0;
+                visualizzaMessaggio();
+            }
+        });
+
     }
 
     /**
