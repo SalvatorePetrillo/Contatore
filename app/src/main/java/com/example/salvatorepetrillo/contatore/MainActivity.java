@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button vDiminuisci;
     private Button vAzzera;
     private CheckBox vRaddoppio;
+    // verifichiamo come caricare file in github
 
     private int contatore = 100;
 
